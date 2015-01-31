@@ -1,3 +1,4 @@
+aldeed:geocoder@0.3.2
 application-configuration@1.0.4
 autoupdate@1.1.5
 base64@1.0.2
@@ -8,11 +9,13 @@ boilerplate-generator@1.0.2
 bootstrap@1.0.1
 callback-hook@1.0.2
 check@1.0.4
+dburles:google-maps@1.0.4
 ddp@1.0.14
 deps@1.0.6
 ejson@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
+forecastio@0.1.0
 geojson-utils@1.0.2
 html-tools@1.0.3
 htmljs@1.0.3
@@ -39,6 +42,7 @@ minimongo@1.0.6
 mizzao:bootstrap-3@3.3.1_1
 mobile-status-bar@1.0.2
 mongo@1.0.11
+mrt:geo@0.0.1
 observe-sequence@1.0.4
 ordered-dict@1.0.2
 random@1.0.2

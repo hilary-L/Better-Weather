@@ -1,7 +1,15 @@
 {
   "meteor": {},
   "dependencies": {
-    "basePackages": {},
-    "packages": {}
+    "basePackages": {
+      "geocoder": {}
+    },
+    "packages": {
+      "geocoder": {
+        "git": "https://github.com/aldeed/meteor-geocoder.git",
+        "tag": "v0.3.2",
+        "commit": "7db8cf540ab66afa051023206c22a3ba650cf7f8"
+      }
+    }
   }
 }

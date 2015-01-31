@@ -10,3 +10,7 @@ bootstrap
 mizzao:bootstrap-3
 iron:router
 http
+forecastio
+dburles:google-maps
+aldeed:geocoder
+mrt:geo
