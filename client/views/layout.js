@@ -21,7 +21,9 @@ Template.layout.events({
 		Meteor.call('getForecastData', longitude, latitude, function(error, result) {
 			console.log(result);
 			var forecastObject = $.parseJSON(result.content);
-
+			console.log(forecastObject);
+			console.log(forecastObject.daily.data[0]);
+			console.log(forecastObject.daily.data[0].apparentTemperatureMax);
 			console.log(forecastObject.currently.apparentTemperature);
 			Meteor.call('updateForecast', forecastObject)
 

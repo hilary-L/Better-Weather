@@ -52,4 +52,4 @@ Meteor.methods({
 
 		return href;
 	}
-})
+});

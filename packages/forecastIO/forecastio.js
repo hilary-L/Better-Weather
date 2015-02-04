@@ -28,10 +28,24 @@ Meteor.methods({
 
 Meteor.methods({
 	'updateForecast': function(forecastObject) {
-		var newForecast = {
-				temperature: forecastObject.currently.apparentTemperature,
-				outlook: forecastObject.currently.summary
-			};
-		Forecasts.update({}, {temperature: newForecast.temperature.toPrecision(2), outlook: newForecast.outlook});
+		console.log("test");
+		console.log(forecastObject.daily.data[0].apparentTemperatureMax);
+
+		Forecasts.update({}, 
+			{
+			temperature: forecastObject.currently.apparentTemperature.toPrecision(2),
+			outlook: forecastObject.currently.summary,
+			day1: {
+				temperature: forecastObject.daily.data[0].apparentTemperatureMax.toPrecision(2),
+			},
+			day2: {
+				temperature: forecastObject.daily.data[1].apparentTemperatureMax.toPrecision(2),
+			},
+			day3: {
+				temperature: forecastObject.daily.data[2].apparentTemperatureMax.toPrecision(2),
+			}
+
+
+			});
 	}
 });
