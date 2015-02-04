@@ -7,11 +7,16 @@ Forecastio.getForecast = function(longitude, latitude) {
 	var forecastResponse = Meteor.http.get(
 		url,
 		{
-			timeout: 5000
+			timeout: 60000
 		}
 	);
 	if(forecastResponse.statusCode === 200)
 		return forecastResponse;
+	else {
+		console.log (forecastResponse.statusCode);
+		console.log(forecastResponse);
+	}
+
 
 }
 
@@ -22,7 +27,11 @@ Meteor.methods({
 });
 
 Meteor.methods({
-	'updateForecast': function(newForecast) {
+	'updateForecast': function(forecastObject) {
+		var newForecast = {
+				temperature: forecastObject.currently.apparentTemperature,
+				outlook: forecastObject.currently.summary
+			};
 		Forecasts.update({}, {temperature: newForecast.temperature.toPrecision(2), outlook: newForecast.outlook});
 	}
 });

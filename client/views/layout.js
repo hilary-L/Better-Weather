@@ -16,17 +16,38 @@ Template.layout.events({
 		var resultObject = resultArray[0];
 		longitude = resultObject.longitude;
 		latitude = resultObject.latitude;
+		city = resultObject.city;
 
 		Meteor.call('getForecastData', longitude, latitude, function(error, result) {
-		console.log(result);
-		var forecastObject = $.parseJSON(result.content);
-		var newForecast = {
-			temperature: forecastObject.currently.apparentTemperature,
-			outlook: forecastObject.currently.summary
-		};
-		console.log(forecastObject.currently.apparentTemperature);
-		Meteor.call('updateForecast', newForecast);
-	});
+			console.log(result);
+			var forecastObject = $.parseJSON(result.content);
+
+			console.log(forecastObject.currently.apparentTemperature);
+			Meteor.call('updateForecast', forecastObject)
+
+
+			});
+
+		Meteor.call('getFlickrPhotos', city, function(error, result) {
+			console.log(error);
+			var photosObject = $.parseJSON(result.content);
+			console.log(photosObject);
+
+			Meteor.call('pickPhoto', photosObject, function(error, result) {
+				console.log(error);
+				console.log(result);
+
+				var href = "url(" + result + ")";
+
+				console.log(href);
+
+				$('body').css({'background-image': href});
+
+
+			});
+
+
+		});
 	});
 
 

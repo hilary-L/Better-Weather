@@ -2,6 +2,9 @@ body {
   padding-top: 50px;
   background: #9DE4FA;
   color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
 }
 .starter-template {
   padding: 40px 15px;
