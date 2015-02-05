@@ -6,7 +6,6 @@ Template.layout.events({
 		location: $(e.target).find('[name=search]').val()
 	}
 
-	console.log(search.location);
 
 	var longitude = 0;
 	var latitude = 0;
@@ -19,12 +18,8 @@ Template.layout.events({
 		city = resultObject.city;
 
 		Meteor.call('getForecastData', longitude, latitude, function(error, result) {
-			console.log(result);
+			console.log(error);
 			var forecastObject = $.parseJSON(result.content);
-			console.log(forecastObject);
-			console.log(forecastObject.daily.data[0]);
-			console.log(forecastObject.daily.data[0].apparentTemperatureMax);
-			console.log(forecastObject.currently.apparentTemperature);
 			Meteor.call('updateForecast', forecastObject)
 
 
@@ -33,15 +28,11 @@ Template.layout.events({
 		Meteor.call('getFlickrPhotos', city, function(error, result) {
 			console.log(error);
 			var photosObject = $.parseJSON(result.content);
-			console.log(photosObject);
 
 			Meteor.call('pickPhoto', photosObject, function(error, result) {
 				console.log(error);
-				console.log(result);
 
 				var href = "url(" + result + ")";
-
-				console.log(href);
 
 				$('body').css({'background-image': href});
 

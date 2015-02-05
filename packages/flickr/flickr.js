@@ -3,7 +3,6 @@ Flickr = {};
 Flickr.getPhotos = function(city) {
 
 	var apiKey = Meteor.settings.flickr.toString();
-	console.log(apiKey);
 
 	var url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search';
 
@@ -44,11 +43,8 @@ Meteor.methods({
 		var num = Math.floor(Math.random() * 50);
 
 		var selectedPhoto = photos.photos.photo[num];
-		console.log(num);
-		console.log(selectedPhoto);
 
 		href = "http://farm" + selectedPhoto.farm + ".staticflickr.com/" + selectedPhoto.server + "/" + selectedPhoto.id + "_" + selectedPhoto.secret + "_" + "b.jpg";
-		console.log(href);
 
 		return href;
 	}

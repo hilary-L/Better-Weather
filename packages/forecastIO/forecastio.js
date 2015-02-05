@@ -30,7 +30,6 @@ Meteor.methods({
 	'updateForecast': function(forecastObject) {
 
 		var day = moment();
-		console.log(day.format('dddd'));
 
 		Forecasts.update({}, 
 			{
