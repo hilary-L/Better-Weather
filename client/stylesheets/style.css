@@ -16,17 +16,17 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 }
-.climacon.cloud:before {
+.climacon.cloud:before, .climacon.cloudy:before {
 	content: "\e000";
 }
-.climacon.cloud.sun:before {
+.climacon.cloud.sun:before, .climacon.partly-cloudy-day:before {
 	content: "\e001";
 }
-.climacon.cloud.moon:before {
+.climacon.cloud.moon:before, .climacon.partly-cloudy-night:before {
 	content: "\e002";
 }
 .climacon.rain:before,
-.climacon.rain.cloud:before {
+.climacon.rain.cloud:before, .climacon.rain:before {
 	content: "\e003";
 }
 .climacon.rain.sun:before,
@@ -168,7 +168,7 @@
 .climacon.lightning.cloud.moon:before {
 	content: "\e027";
 }
-.climacon.sun:before {
+.climacon.sun:before, .climacon.clear-day:before {
 	content: "\e028";
 }
 .climacon.sun.set:before,
@@ -189,7 +189,7 @@
 .climacon.lower-sun:before {
 	content: "\e02c";
 }
-.climacon.moon:before {
+.climacon.moon:before, .climacon.clear-night:before {
 	content: "\e02d";
 }
 .climacon.moon.new:before {
@@ -304,6 +304,28 @@ body {
   background-size: cover;
   background-position: left top;
 }
+
+.navbar-inverse {
+	background-color: rgba(0,0,0,0.3);
+	border: none;
+}
+.navbar-inverse .navbar-brand {
+	color: #000;
+}
+.navbar-form .form-control {
+	background-color: rgba(0,0,0,0.2);
+	padding: 20px 40px;
+	border: none;
+	border-radius: 0px;
+	color: white;
+}
+
+.navbar-form .btn {
+	background-color: rgba(0,0,0,0.2);
+	padding: 8px 10px;
+	color: white;
+	border: none;
+}
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -311,8 +333,88 @@ body {
 
 .forecasts {
 	position: relative;
-	margin-top: 5%;
+	margin-top: 2%;
 }
 .forecast-content h1 {
 	font-size: 250px;
+}
+
+.forecast-content h2 {
+	margin-left: 10px;
+}
+
+
+.day {
+	background-color: rgba(0,0,0,0.3);
+	border: 2px solid white;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.forecast-container .col-md-5 {
+	border: 2px solid white;
+	background-color: rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+	padding: 0;
+	margin-bottom: 20px;
+	margin-left: 18%;
+}
+
+.current {
+	margin-top: 25px;
+}
+
+
+.current .col-md-1 {
+	margin-top: -5%;
+}
+
+.current .col-md-10 {
+	margin-top: -2px;
+}
+
+.current h2 {
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.current .icon {
+	font-size: 75px;
+	margin-right: 20px;
+	display: inline-block;
+}
+
+.summary {
+	margin-top: 5%;
+	margin-left: 40px;
+	display: inline-block;
+}
+
+.day {
+	margin-right: 20px;
+	margin-bottom: 20px;
+	padding-top: 5px;
+}
+
+
+.day .icon {
+	font-size: 75px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	margin-left: 0;
+}
+
+.day h3 {
+	text-align: center;
+	font-size: 16px;
+	margin-bottom: 5px;
+	margin-top: 0;
+	margin-left: 0;
+}
+
+.day p {
+	text-align: center;
+	font-size: 12px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
 }

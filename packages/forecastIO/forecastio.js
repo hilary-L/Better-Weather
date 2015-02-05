@@ -28,23 +28,52 @@ Meteor.methods({
 
 Meteor.methods({
 	'updateForecast': function(forecastObject) {
-		console.log("test");
-		console.log(forecastObject.daily.data[0].apparentTemperatureMax);
+
+		var day = moment();
+		console.log(day.format('dddd'));
 
 		Forecasts.update({}, 
 			{
-			temperature: forecastObject.currently.apparentTemperature.toPrecision(2),
-			outlook: forecastObject.currently.summary,
-			day1: {
-				temperature: forecastObject.daily.data[0].apparentTemperatureMax.toPrecision(2),
-			},
-			day2: {
-				temperature: forecastObject.daily.data[1].apparentTemperatureMax.toPrecision(2),
-			},
-			day3: {
-				temperature: forecastObject.daily.data[2].apparentTemperatureMax.toPrecision(2),
-			}
-
+				temperature: forecastObject.currently.apparentTemperature.toPrecision(2),
+				outlook: forecastObject.currently.summary,
+				icon: forecastObject.daily.data[0].icon,
+				summary: forecastObject.daily.data[0].summary,
+				dayLabel: day.format('dddd'),
+				day1: {
+					temperature: forecastObject.daily.data[1].apparentTemperatureMax.toPrecision(2),
+					temperatureLow: forecastObject.daily.data[1].apparentTemperatureMin.toPrecision(2),
+					icon: forecastObject.daily.data[1].icon,
+					summary: forecastObject.daily.data[1].summary,
+					dayLabel: day.add(1, 'days').format('dddd')
+				},
+				day2: {
+					temperature: forecastObject.daily.data[2].apparentTemperatureMax.toPrecision(2),
+					temperatureLow: forecastObject.daily.data[2].apparentTemperatureMin.toPrecision(2),
+					icon: forecastObject.daily.data[2].icon,
+					summary: forecastObject.daily.data[2].summary,
+					dayLabel: day.add(1, 'days').format('dddd')
+				},
+				day3: {
+					temperature: forecastObject.daily.data[3].apparentTemperatureMax.toPrecision(2),
+					temperatureLow: forecastObject.daily.data[3].apparentTemperatureMin.toPrecision(2),
+					icon: forecastObject.daily.data[3].icon,
+					summary: forecastObject.daily.data[3].summary,
+					dayLabel: day.add(1, 'days').format('dddd')
+				},
+				day4: {
+					temperature: forecastObject.daily.data[4].apparentTemperatureMax.toPrecision(2),
+					temperatureLow: forecastObject.daily.data[4].apparentTemperatureMin.toPrecision(2),
+					icon: forecastObject.daily.data[4].icon,
+					summary: forecastObject.daily.data[4].summary,
+					dayLabel: day.add(1, 'days').format('dddd')
+				},
+				day5: {
+					temperature: forecastObject.daily.data[5].apparentTemperatureMax.toPrecision(2),
+					temperatureLow: forecastObject.daily.data[5].apparentTemperatureMin.toPrecision(2),
+					icon: forecastObject.daily.data[5].icon,
+					summary: forecastObject.daily.data[5].summary,
+					dayLabel: day.add(1, 'days').format('dddd')
+				}
 
 			});
 	}
