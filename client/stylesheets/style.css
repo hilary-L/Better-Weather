@@ -511,11 +511,16 @@ body {
 }
 
 .precip-box {
-	margin-top: -60%;
+	margin-top: -73%;
 	border: 2px solid white;
 	background-color: rgba(0,0,0,0.3);
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 	padding: 0;
+	margin-bottom: 20px;
+}
+
+.precip-box h4 {
+	text-align: center;
 }
 
 .axis path, .axis line {
