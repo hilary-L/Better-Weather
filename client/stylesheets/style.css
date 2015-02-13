@@ -8,6 +8,69 @@
     font-style: normal;
 }
 
+@font-face {
+	font-family: 'Raleway';
+	src: url('fonts/raleway_thin-webfont.eot');
+	src: url('fonts/raleway_thin-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/raleway_thin-webfont.woff') format('woff'),
+		 url('fonts/raleway_thin-webfont.ttf') format('truetype'),
+		 url('fonts/raleway_thin-webfont.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/leaguespartan-bold.eot');
+    src: url('fonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/leaguespartan-bold.woff2') format('woff2'),
+         url('fonts/leaguespartan-bold.woff') format('woff'),
+         url('fonts/leaguespartan-bold.ttf') format('truetype'),
+         url('fonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'Junction';
+    src: url('fonts/junction-bold.eot');
+    src: url('fonts/junction-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/junction-bold.woff') format('woff'),
+         url('fonts/junction-bold.ttf') format('truetype'),
+         url('fonts/junction-bold.svg#junctionbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Junction Light';
+    src: url('fonts/junction-light.eot');
+    src: url('fonts/junction-light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/junction-light.woff') format('woff'),
+         url('fonts/junction-light.ttf') format('truetype'),
+         url('fonts/junction-light.svg#junctionlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Junction';
+    src: url('fonts/junction-regular.eot');
+    src: url('fonts/junction-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/junction-regular.woff') format('woff'),
+         url('fonts/junction-regular.ttf') format('truetype'),
+         url('fonts/junction-regular.svg#junctionregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
 .climacon:before{
 	font-family: 'ClimaconsRegular';
 	speak: none;
@@ -303,6 +366,24 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left top;
+  font-family: 'Raleway';
+  letter-spacing: 2px;
+  text-rendering: optimizeLegibility;
+}
+
+.degree, .degree-small {
+	font-family: 'Constantia'
+}
+
+.degree {
+	font-size: 125px;
+	font-weight: 100;
+	vertical-align: super;
+}
+
+.degree-small {
+	font-size: 16px;
+	vertical-align: middle;
 }
 
 .navbar-inverse {
@@ -310,7 +391,8 @@ body {
 	border: none;
 }
 .navbar-inverse .navbar-brand {
-	color: #000;
+	color: #fff;
+	margin-top: 5%;
 }
 .navbar-form .form-control {
 	background-color: rgba(0,0,0,0.2);
@@ -337,10 +419,14 @@ body {
 }
 .forecast-content h1 {
 	font-size: 250px;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 }
 
 .forecast-content h2 {
 	margin-left: 10px;
+	font-size: 24px;
+	margin-bottom: 20px;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 }
 
 
@@ -350,7 +436,7 @@ body {
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
 }
 
-.forecast-container .col-md-5 {
+.forecast-container .forecasts-currently {
 	border: 2px solid white;
 	background-color: rgba(0,0,0,0.3);
 	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
@@ -378,15 +464,20 @@ body {
 }
 
 .current .icon {
+	margin-top: 0%;
 	font-size: 75px;
 	margin-right: 20px;
 	display: inline-block;
 }
 
 .summary {
-	margin-top: 5%;
+	margin-top: 0%;
 	margin-left: 40px;
 	display: inline-block;
+}
+
+.summary h3 {
+	font-size: 20px;
 }
 
 .day {
@@ -405,16 +496,36 @@ body {
 
 .day h3 {
 	text-align: center;
-	font-size: 16px;
+	font-size: 18px;
 	margin-bottom: 5px;
-	margin-top: 0;
+	margin-top: 5px;
 	margin-left: 0;
 }
 
 .day p {
 	text-align: center;
-	font-size: 12px;
+	font-size: 14px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5%;
+}
+
+.precip-box {
+	margin-top: -60%;
+	border: 2px solid white;
+	background-color: rgba(0,0,0,0.3);
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+	padding: 0;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: white;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-family: Raleway;
+	font-size: 11px;
+	stroke: white;
 }

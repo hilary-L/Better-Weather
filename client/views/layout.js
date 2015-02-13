@@ -18,6 +18,7 @@ Template.layout.events({
 		city = resultObject.city;
 
 		Meteor.call('getForecastData', longitude, latitude, function(error, result) {
+			console.log(result);
 			console.log(error);
 			var forecastObject = $.parseJSON(result.content);
 			Meteor.call('updateForecast', forecastObject)
@@ -44,7 +45,16 @@ Template.layout.events({
 	});
 
 
-
 }
 
 });
+
+Template.layout.rendered = function() {
+	$(window).scroll(function() {
+		if($(this).scrollTop() > 25) {
+			$('.navbar').hide("drop", {direction: "up"}, 600);
+		}
+		else
+			$('.navbar').show("drop", {direction: "up"}, 600);
+	});
+};
