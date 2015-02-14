@@ -1,9 +1,12 @@
 Template.precip.rendered = function() {
 		this.autorun(function() {
 		var data = Router.current().data();
+		
 		var precipHourArray = data.fData.precipHour;
 		var precipDayArray = data.fData.precipDay;
+
 		var d3Draw = function(precipArray) {
+
 			if (precipArray.length === 49) {
 				precipArray = $.map(precipArray, function(n, i) {
 					if (i <= 13) {
@@ -52,7 +55,10 @@ Template.precip.rendered = function() {
             svg.append("g").attr("class", "axis").attr("transform", "translate(" + paddingW + ",0)").call(yAxis);
 		};
 
+
 		$('svg').remove();
+		$('br').remove();
+
 		d3Draw(precipHourArray);
 		$('svg').after('</br>');
 		d3Draw(precipDayArray);

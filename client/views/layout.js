@@ -19,7 +19,6 @@ Template.layout.events({
 
 		Meteor.call('getForecastData', longitude, latitude, function(error, result) {
 			console.log(result);
-			console.log(error);
 			var forecastObject = $.parseJSON(result.content);
 			Meteor.call('updateForecast', forecastObject)
 
@@ -27,11 +26,9 @@ Template.layout.events({
 			});
 
 		Meteor.call('getFlickrPhotos', city, function(error, result) {
-			console.log(error);
 			var photosObject = $.parseJSON(result.content);
 
 			Meteor.call('pickPhoto', photosObject, function(error, result) {
-				console.log(error);
 
 				var href = "url(" + result + ")";
 
